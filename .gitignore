@@ -3,7 +3,8 @@ node_modules/
 
 # Skill install artifacts (npx skills add)
 .agents/
-.claude/
+.claude/*
+!.claude/settings.json
 skills-lock.json
 
 # Environment variables / secrets

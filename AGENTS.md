@@ -268,3 +268,15 @@ Recent commits: !`git log --oneline -5 2>/dev/null`
 ```
 
 **Why this is Claude Code-only**: Other agents that load skills will see the literal `` !`command` `` string rather than executing it, which would appear as garbled instructions. Keep cross-agent skill files free of this syntax.
+
+## Presentations
+
+Project plugins are enabled in `.claude/settings.json`: `frontend-slides`, `ui-ux-pro-max`, `impeccable`, `humanizer`, and `document-skills` (PPTX). When asked to make a presentation or slide deck, use all five:
+
+- **Frontend Slides** — build the slides
+- **UI UX Pro Max** — pick style, palette, and fonts
+- **Impeccable** — polish the design and remove "AI-looking" patterns
+- **Humanizer** — rewrite the text so it reads as human-written
+- **PPTX (document-skills)** — save the result as an editable `.pptx`
+
+Show 2-3 style options before building. Use only the numbers and facts the user provides; if something is missing, ask instead of inventing it.
