@@ -1,0 +1,31 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: Inter, sans-serif; color: #0B3140; }
+    #goals-g { position: absolute; inset: 0; background: linear-gradient(160deg, #FDF1E2 0%, #F6D9B8 100%); clip-path: circle(0px at 1330px 190px); }
+    #goals-k { position: absolute; left: 130px; top: 110px; font-size: 40px; font-weight: 500; letter-spacing: 0.04em; opacity: 0; }
+    #goals-h { position: absolute; left: 130px; top: 170px; font-size: 104px; font-weight: 300; line-height: 1.05; text-transform: uppercase; opacity: 0; }
+    .goals-row { position: absolute; left: 130px; width: 1500px; font-size: 56px; font-weight: 400; line-height: 1.2; opacity: 0; padding-left: 56px; }
+    .goals-row::before { content: ""; position: absolute; left: 0; top: 14px; width: 22px; height: 22px; background: #134553; transform: rotate(45deg); }
+    #goals-r1 { top: 520px; } #goals-r2 { top: 650px; } #goals-r3 { top: 780px; }
+  </style>
+  <div data-hf-id="hf-xzcp" id="root" data-composition-id="goals" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-k5h7" id="goals-g"></div>
+    <div data-hf-id="hf-pig5" id="goals-k">Кампания 360° · B2B и B2C</div>
+    <h2 data-hf-id="hf-sjnr" id="goals-h">Престиж премии —<br data-hf-id="hf-x5px" />доверие людей</h2>
+    <div data-hf-id="hf-mgei" class="goals-row" id="goals-r1">Поддержать победителей прошлых лет</div>
+    <div data-hf-id="hf-wme3" class="goals-row" id="goals-r2">Укрепить имидж премии для города и бизнеса</div>
+    <div data-hf-id="hf-hmau" class="goals-row" id="goals-r3">Продвинуть победителей среди жителей и гостей столицы</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#goals-g", { clipPath: "circle(0px at 1330px 190px)" }, { clipPath: "circle(2400px at 1330px 190px)", duration: 0.7, ease: "power3.in" }, 0);
+    tl.fromTo("#goals-k", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 0.8);
+    tl.fromTo("#goals-h", { opacity: 0, filter: "blur(12px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "power4.out" }, 0.9);
+    ["#goals-r1", "#goals-r2", "#goals-r3"].forEach((s, i) => {
+      const t = 1.7 + i * 1.9;
+      tl.fromTo(s, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, t);
+      if (i < 2) tl.to(s, { opacity: 0.35, duration: 0.3, ease: "power2.out" }, t + 1.7);
+    });
+    window.__timelines["goals"] = tl;
+  </script>
+</template>

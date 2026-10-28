@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: Inter, sans-serif; color: #F0C89A; }
+    #finale-g { position: absolute; inset: 0; background: #012935; clip-path: inset(100% 0 0 0); }
+    #finale-sw { position: absolute; left: 0; top: 0; width: 1500px; mix-blend-mode: lighten; clip-path: inset(0 100% 0 0); -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent); mask-image: linear-gradient(to bottom, #000 82%, transparent); }
+    #finale-sw img { width: 100%; display: block; }
+    #finale-lg { position: absolute; left: 640px; top: 300px; width: 900px; mix-blend-mode: lighten; clip-path: inset(0 100% 0 0); }
+    #finale-lg img { width: 100%; display: block; }
+    #finale-t { position: absolute; left: 0; width: 1920px; top: 840px; text-align: center; font-size: 52px; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0; }
+  </style>
+  <div data-hf-id="hf-cri0" id="root" data-composition-id="finale" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-zc6g" id="finale-g"></div>
+    <div data-hf-id="hf-3hcz" id="finale-sw"><img data-hf-id="hf-9yya" src="assets/swoosh.png" /></div>
+    <div data-hf-id="hf-e7zi" id="finale-lg"><img data-hf-id="hf-r8jb" src="assets/logo-lockup.png" /></div>
+    <div data-hf-id="hf-ut1s" id="finale-t">План продвижения премии</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#finale-g", { clipPath: "inset(100% 0 0 0)" }, { clipPath: "inset(0% 0 0 0)", duration: 0.6, ease: "power3.inOut" }, 0);
+    tl.fromTo("#finale-sw", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power3.inOut" }, 0.6);
+    tl.fromTo("#finale-lg", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 1.0, ease: "power3.out" }, 1.4);
+    tl.fromTo("#finale-t", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power3.out" }, 2.6);
+    window.__timelines["finale"] = tl;
+  </script>
+</template>

@@ -1,0 +1,40 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: Inter, sans-serif; color: #F0C89A; }
+    #reach-g { position: absolute; inset: 0; background: #012935; clip-path: circle(0px at 960px 540px); }
+    #reach-k { position: absolute; left: 130px; top: 130px; font-size: 38px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #8fb3b8; opacity: 0; }
+    #reach-n { position: absolute; left: 120px; top: 210px; font-size: 330px; font-weight: 200; line-height: 1; letter-spacing: -0.02em; opacity: 0; }
+    #reach-n small { font-size: 150px; font-weight: 300; margin-left: 30px; }
+    #reach-l { position: absolute; left: 130px; top: 570px; font-size: 52px; font-weight: 300; color: #fff; line-height: 1.2; opacity: 0; }
+    #reach-w { position: absolute; left: 130px; top: 760px; height: 130px; width: 1600px; }
+    .reach-i { position: absolute; left: 0; top: 0; font-size: 104px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.02em; opacity: 0; white-space: nowrap; }
+    #reach-s { position: absolute; left: 130px; top: 910px; font-size: 32px; color: #8fb3b8; letter-spacing: 0.06em; opacity: 0; }
+  </style>
+  <div data-hf-id="hf-z7xe" id="root" data-composition-id="reach" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-z5fa" id="reach-g"></div>
+    <div data-hf-id="hf-jc1j" id="reach-k">Продвижение в медиа</div>
+    <div data-hf-id="hf-bnxr" id="reach-n"><span data-hf-id="hf-cpli" id="reach-v">0</span><small data-hf-id="hf-qc58">млн</small></div>
+    <div data-hf-id="hf-s7hc" id="reach-l">ожидаемый суммарный охват в СМИ и соцсетях</div>
+    <div data-hf-id="hf-ga86" id="reach-w">
+      <div data-hf-id="hf-9lj6" class="reach-i">Блогеры</div><div data-hf-id="hf-a67c" class="reach-i">Спецпроекты ЧТИВО</div><div data-hf-id="hf-yuwt" class="reach-i">The Blueprint</div><div data-hf-id="hf-ye4h" class="reach-i">RUSSPASS</div><div data-hf-id="hf-oik8" class="reach-i">Гала-ужин</div>
+    </div>
+    <div data-hf-id="hf-52kg" id="reach-s">август → декабрь и после церемонии, до следующего анонса</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#reach-g", { clipPath: "circle(0px at 960px 540px)" }, { clipPath: "circle(1400px at 960px 540px)", duration: 0.7, ease: "power3.in" }, 0);
+    tl.fromTo("#reach-k", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.8);
+    tl.fromTo("#reach-n", { opacity: 0, filter: "blur(14px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 0.9);
+    const o = { v: 0 };
+    tl.to(o, { v: 120, duration: 1.9, ease: "power3.out", onUpdate: () => { document.querySelector("#reach-v").textContent = Math.round(o.v); } }, 1.0);
+    tl.fromTo("#reach-l", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35 }, 2.5);
+    const items = document.querySelectorAll(".reach-i");
+    items.forEach((el, i) => {
+      const t = 3.0 + i * 0.7;
+      tl.fromTo(el, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, t);
+      if (i < items.length - 1) tl.to(el, { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power3.in" }, t + 0.52);
+    });
+    tl.fromTo("#reach-s", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 5.4);
+    window.__timelines["reach"] = tl;
+  </script>
+</template>

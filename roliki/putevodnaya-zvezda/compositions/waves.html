@@ -1,0 +1,45 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: Inter, sans-serif; color: #0B3140; }
+    #waves-g { position: absolute; inset: 0; background: linear-gradient(160deg, #FDF1E2 0%, #F6D9B8 100%); clip-path: inset(0 0 0 100%); }
+    #waves-h { position: absolute; left: 130px; top: 70px; font-size: 84px; font-weight: 300; text-transform: uppercase; opacity: 0; }
+    .waves-m { position: absolute; top: 205px; width: 237px; font-size: 28px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #5b7a84; opacity: 0; }
+    .waves-ln { position: absolute; top: 250px; width: 1px; height: 690px; background: rgba(1,41,53,0.14); }
+    .waves-w { position: absolute; left: 130px; font-size: 44px; font-weight: 500; opacity: 0; }
+    .waves-w small { font-size: 30px; font-weight: 400; color: #5b7a84; margin-left: 18px; }
+    .waves-b { position: absolute; height: 64px; border-radius: 32px; transform-origin: 0 50%; font-size: 30px; font-weight: 500; line-height: 64px; padding-left: 30px; white-space: nowrap; }
+    .waves-pr { background: #134553; color: #F0C89A; }
+    .waves-on { background: #F0B87C; color: #0B3140; }
+    .waves-goal { position: absolute; left: 130px; font-size: 32px; font-weight: 400; opacity: 0; }
+    .waves-goal b { font-weight: 700; }
+  </style>
+  <div data-hf-id="hf-4k1r" id="root" data-composition-id="waves" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-e1lt" id="waves-g"></div>
+    <h2 data-hf-id="hf-0in7" id="waves-h">Две волны</h2>
+    <div data-hf-id="hf-e4gu" class="waves-m" style="left:130px">август</div><div data-hf-id="hf-amiy" class="waves-m" style="left:367px">сентябрь</div><div data-hf-id="hf-35wf" class="waves-m" style="left:604px">октябрь</div><div data-hf-id="hf-ccof" class="waves-m" style="left:841px">ноябрь</div><div data-hf-id="hf-pufz" class="waves-m" style="left:1078px">декабрь</div><div data-hf-id="hf-bt8n" class="waves-m" style="left:1315px">январь</div><div data-hf-id="hf-sgb4" class="waves-m" style="left:1552px">февраль</div>
+    <div data-hf-id="hf-lvfy" class="waves-ln" style="left:130px"></div><div data-hf-id="hf-nx5w" class="waves-ln" style="left:1078px"></div>
+    <div data-hf-id="hf-bqjp" class="waves-w" id="waves-w1" style="top:275px">1 волна<small data-hf-id="hf-t32v">B2B и B2C</small></div>
+    <div data-hf-id="hf-iano" class="waves-b waves-pr" id="waves-b1" style="left:130px;top:350px;width:1185px">PR · август – декабрь</div>
+    <div data-hf-id="hf-ao9j" class="waves-b waves-on" id="waves-b2" style="left:130px;top:430px;width:711px">Онлайн · август – октябрь</div>
+    <div data-hf-id="hf-91ky" class="waves-goal" id="waves-g1" style="top:518px"><b data-hf-id="hf-8xor">Цель:</b> повысить престиж премии и продвинуть победителей прошлых лет</div>
+    <div data-hf-id="hf-11y3" class="waves-w" id="waves-w2" style="top:620px">2 волна<small data-hf-id="hf-y7cp">B2C</small></div>
+    <div data-hf-id="hf-izvr" class="waves-b waves-pr" id="waves-b3" style="left:1078px;top:695px;width:711px">PR · декабрь – февраль</div>
+    <div data-hf-id="hf-2hgm" class="waves-b waves-on" id="waves-b4" style="left:1078px;top:775px;width:474px">Онлайн · декабрь – январь</div>
+    <div data-hf-id="hf-6759" class="waves-goal" id="waves-g2" style="top:863px"><b data-hf-id="hf-fy0b">Цель:</b> продвинуть победителей и вырастить доверие пользователей</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#waves-g", { clipPath: "inset(0 0 0 100%)" }, { clipPath: "inset(0 0 0 0%)", duration: 0.55, ease: "power4.inOut" }, 0);
+    tl.fromTo("#waves-h", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.6);
+    tl.fromTo(".waves-m", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out", stagger: 0.06 }, 0.8);
+    tl.fromTo("#waves-w1", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 1.4);
+    tl.fromTo("#waves-b1", { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: "expo.out" }, 1.6);
+    tl.fromTo("#waves-b2", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 2.0);
+    tl.fromTo("#waves-g1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3 }, 3.0);
+    tl.fromTo("#waves-w2", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 4.3);
+    tl.fromTo("#waves-b3", { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "expo.out" }, 4.5);
+    tl.fromTo("#waves-b4", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "expo.out" }, 4.9);
+    tl.fromTo("#waves-g2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3 }, 5.9);
+    window.__timelines["waves"] = tl;
+  </script>
+</template>
